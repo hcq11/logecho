@@ -1,0 +1,23 @@
+{% include "header.twig" %}
+
+    <div class="col-main" role="main">
+        {% for post in index.post %}
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <h1 class="post__title h3" itemprop="name headline"><a href="{{post.url}}" itemtype="url">{{post.title}}</a></h1>
+            <div class="post__meta">
+                <time datetime="" itemprop="datePublished">{{post.date | date("F j, Y") }}</time>
+            </div>
+            <hr class="hr-title">
+            <div class="post__content" itemprop="articleBody">
+                {{post.content | more(300)}}
+            </div>
+        </article>
+        {% endfor %}
+
+        <a href="/archives.html" class="btn-archive">- Archives -</a>
+
+        {% include "footer.twig" %}
+    </div><!-- /.layout-main -->
+</div><!-- /.container -->
+
+</body>

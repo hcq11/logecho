@@ -1,0 +1,35 @@
+# You can configure this file to customize your site
+globals:
+    # Definition of global variable
+    title : My Blog Site
+    description : Yet another logecho site
+    url : http://logecho.com/
+blocks:
+    # All blocks to compile
+    post:
+        source  : /posts/
+        target  : /posts/
+    category:
+        source  :
+            default : Default
+        template  : archives.twig
+        target    : archives.html
+    tag:
+        template  : archives.twig
+        target    : archives.html
+    archive:
+        template  : archives.twig
+        target    : archives.html
+    index:
+        template  : index.twig
+        target    : index.html
+        limit     : 10
+feeds:
+    # Definition of feeds gererating
+    source  : post
+    limit   : 20
+    target  : feeds.xml
+    author  : Logecho
+
+sync: http://your-custom-key@example.com
+
